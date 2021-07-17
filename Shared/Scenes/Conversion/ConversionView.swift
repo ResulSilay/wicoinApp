@@ -11,7 +11,7 @@ struct ConversionView :View {
     
     @StateObject var viewModel = ConversionViewModel()
     
-    @State var coinId : Int? = nil
+    @State var coinItem : CoinDataModel? = nil
     @State var amount : String = ""
     @State var selectedCoinId : Int = 0
     
@@ -33,8 +33,8 @@ struct ConversionView :View {
                                     .disabled(viewModel.isLoading)
                                     .simultaneousGesture(TapGesture().onEnded {
                                         
-                                        self.selectedCoinId = coin.id!
-                                        print("Select coin id --> \(String(describing: self.selectedCoinId.toString()))")
+                                        self.coinItem = coin
+                                        print("Select coin id --> \(String(describing: self.coinItem?.id?.toString()))")
                                         print("Select coin id ****--> \(String(describing: coin.id?.toString()))")
                                     })
                                 
@@ -49,38 +49,58 @@ struct ConversionView :View {
                     Spacer(minLength: 40)
                     
                     TextField("Enter Amount", text: self.$amount)
-                        .foregroundColor(Color.secondary)
+                        .foregroundColor(Color.white)
                         .padding()
                         .overlay(
-                            RoundedRectangle(cornerRadius: 8.0)
+                            RoundedRectangle(cornerRadius: 36.0)
                                 .stroke(Color.secondary, lineWidth: 2.0)
                         )
                         .padding()
                     
                     Button(action: {
                         
-                        viewModel.convert(conversionRequest: ConversionRequest(id: self.coinId, amount: Double(self.amount)))
+                        viewModel.convert(conversionRequest: ConversionRequest(id: self.coinItem?.id ?? 0, amount: Double(self.amount)))
                         
                     }, label: {
                         
                         Text("CONVERT")
+                            .tracking(0.8)
                             .fontWeight(.bold)
                             .padding(10.0)
                             .frame(maxWidth: .infinity, minHeight: 50)
-                            .foregroundColor(Color.white)
-                            .background(Color.secondary)
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 8.0)
-                                    .stroke(lineWidth: 0.0)
-                                    .foregroundColor(Color.secondary)
-                            )
+                            .background(Color.white)
+                            .cornerRadius(36)
+                            .foregroundColor(Color.black)
+                            .shadow(radius: 2)
+                           
                         
                     })
                     .padding(.top,5)
                     .padding(.leading,15)
                     .padding(.trailing,15)
                     
-                    
+                    VStack{
+                        ZStack{
+                            
+                            VStack{
+                                Text("\(self.coinItem?.symbol ?? "")  --->  \(self.coinItem?.symbol ?? "" )")
+                                    .font(.system(size: 14))
+                                    .fontWeight(.bold)
+                                    .padding(.bottom, 10)
+                                
+                                Text("\(viewModel.conversionResult?.quote?.coinArray[0].price ?? 0)")
+                                    .fontWeight(.bold)
+                                    .font(.system(size: 25))
+                            }
+                        }
+                        .frame(maxWidth: .infinity, minHeight: 150)
+                        .background(LinearGradient(gradient: Gradient(colors: [.red, .orange, .orange]), startPoint: .leading, endPoint: .trailing))
+                        .cornerRadius(16)
+                        .shadow(radius: 6)
+                        .redacted(reason: viewModel.conversionResult == nil ? .placeholder : [])
+                        .padding()
+                        .padding(.top, 20)
+                    }
                 }
             }
             .onAppear(perform: {

@@ -16,6 +16,8 @@ struct CoinDetailView : View {
     
     @State var coinUsdPrice: Double? = nil
     
+    @State var percentChange1H: Double? = nil
+    
     var body: some View{
         
         ScrollView(showsIndicators: false) {
@@ -34,7 +36,7 @@ struct CoinDetailView : View {
                     VStack(alignment: .leading){
                         
                         Text(self.coinUsdPrice?.toFormatter() ?? "-")
-                            .foregroundColor(self.coinUsdPrice! > 0 ? Color.green : Color.red)
+                            .foregroundColor(self.percentChange1H! > 0 ? Color.green : Color.red)
                             .font(.system(size: 21))
                             .fontWeight(.bold)
                             .foregroundColor(.primary)
@@ -107,11 +109,12 @@ struct CoinDetailView : View {
                 
             }
             .padding(15)
-            .redacted(reason: viewModel.isLoading ? . placeholder : [])
-            .onAppear(perform: {
-                viewModel.getInfo(id: coinId!)
-            })
         }
+        .redacted(reason: viewModel.isLoading ? . placeholder : [])
+        .onAppear(perform: {
+            viewModel.getInfo(id: coinId!)
+        })
+        
         .navigationBarTitle(viewModel.data?.name?.toString() ?? "-", displayMode: .large)
     }
 }

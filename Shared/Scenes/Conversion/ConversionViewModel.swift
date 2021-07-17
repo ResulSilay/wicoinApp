@@ -13,7 +13,7 @@ class ConversionViewModel: ObservableObject {
     
     private let cryptoService = CryptoServiceImpl()
     
-    @Published var conversionResult : ConversionResultResponse? = nil
+    @Published var conversionResult : ConversionDataModel? = nil
     
     @Published var coins = [CoinDataModel]()
     
@@ -24,7 +24,7 @@ class ConversionViewModel: ObservableObject {
         DispatchQueue.main.async {
             
             self.conversionService.convert(request: conversionRequest) { ConversionResultResponse in
-                self.conversionResult = ConversionResultResponse
+                self.conversionResult = ConversionResultResponse.data
                 
             } failure: {
                 

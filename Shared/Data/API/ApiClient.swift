@@ -32,6 +32,8 @@ class ApiClient {
             request.setValue(headers.value, forHTTPHeaderField: headers.key)
         }
         
+        print("URL -----> \(url)")
+        
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             
             if let data = data {

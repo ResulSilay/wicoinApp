@@ -7,7 +7,7 @@
 
 import Foundation
 
-class DashboardViewModel : ObservableObject {
+class CoinViewModel : ObservableObject {
     
     private let crytoService = CryptoServiceImpl()
     

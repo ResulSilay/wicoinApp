@@ -28,7 +28,7 @@ struct ConversionCoinItem : View {
                     .clipShape(Circle())
                 
                 Text(coinItem!.symbol!)
-                    .foregroundColor(Color.secondary)
+                    .foregroundColor(Color.primary)
                     .fontWeight(.bold)
                     .lineLimit(1)
                     .frame(minWidth:50)
@@ -38,7 +38,7 @@ struct ConversionCoinItem : View {
                     .foregroundColor(coinItem!.quote!.usd!.percentChange1H! > 0 ? Color.green : Color.red)
                     .fontWeight(.bold)
                     .lineLimit(1)
-                    .font(.system(size: 14))
+                    .font(.system(size: 9))
                     .padding(.top, 0.2)
                 
             }
