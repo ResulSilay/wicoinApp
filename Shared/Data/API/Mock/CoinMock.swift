@@ -9,6 +9,35 @@ import Foundation
 
 class CoinMock{
     
+    func mockDataModel() -> CoinDataModel {
+        return CoinDataModel(id: 1,
+                              name: "Bitcoin",
+                              symbol: "BTC",
+                              slug: "BTC",
+                              numMarketPairs: 1,
+                              dateAdded: "10.10.2010",
+                              tags: ["btc","coin"],
+                              maxSupply: 1, circulatingSupply: 1.0,
+                              totalSupply: 1.0,
+                              platform:Platform(id: 1,
+                                                name: Name(rawValue: "Btc"),
+                                                symbol: Symbol(rawValue: "btc"),
+                                                slug: Slug(rawValue: "btc"),
+                                                tokenAddress: "btc.com"),
+                              cmcRank: 1,
+                              lastUpdated: "10.10.2021",
+                              quote: Quote(usd: Usd(price: 33.000,
+                                                    volume24H: 22.0,
+                                                    percentChange1H: 1.0,
+                                                    percentChange24H: 1.0,
+                                                    percentChange7D: 1.0,
+                                                    percentChange30D: 1.0,
+                                                    percentChange60D: 1.0,
+                                                    percentChange90D: 1.0,
+                                                    marketCap: 1.0,
+                                                    lastUpdated: "01.01.2021")))
+    }
+    
     func mock() -> CoinInfoModel {
         return CoinInfoModel(
             id: 1,
