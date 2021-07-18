@@ -17,7 +17,7 @@ class ConversionServiceImpl : ConversionService {
             baseUrl: BaseUrls.COIN,
             headers: ApiHeaders.shared.coinDataHeaders(),
             httpMethod: HttpMethod.GET,
-            url: "v1/tools/price-conversion?id=\(String(describing: request.id))&amount=\(String(describing: request.amount))",
+            url: "v1/tools/price-conversion?id=\(request.id?.toString() ?? "")&convert_id=\(request.convertId?.toString() ?? "")&amount=\(request.amount?.toString() ?? "")",
             success: { CoinLatestResponse in
                 success(CoinLatestResponse)
                 

@@ -17,7 +17,7 @@ class NewsServiceImpl: NewsService {
             baseUrl: BaseUrls.NEWS,
             headers: ApiHeaders.shared.coinNewsHeaders(),
             httpMethod: HttpMethod.GET,
-            url: "api/1/news?q=\(query)&country=us",
+            url: "api/1/news?q=\(query)",
             
             success: { NewsArchiveResponse in
                 success(NewsArchiveResponse)

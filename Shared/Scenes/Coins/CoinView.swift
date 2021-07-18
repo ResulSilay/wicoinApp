@@ -8,18 +8,18 @@
 import SwiftUI
 import Kingfisher
 
-struct DashboardView : View {
+struct CoinView : View {
     
-    @StateObject var viewModel = DashboardViewModel()
+    @StateObject var viewModel = CoinViewModel()
     
     var body: some View {
         
         NavigationView{
             
-            List(viewModel.coins){ coin in
+            List(viewModel.coins) { coin in
                 
                 NavigationLink(
-                    destination: CoinDetailView(coinId: coin.id!, coinUsdPrice: coin.quote?.usd?.price),
+                    destination: CoinDetailView(coinId: coin.id!, coinUsdPrice: coin.quote?.usd?.price, percentChange1H: coin.quote?.usd?.percentChange1H),
                     label: {
                         CoinCellView(coin: coin)
                     })
@@ -32,7 +32,7 @@ struct DashboardView : View {
             )
             
             .navigationBarTitle("Coins", displayMode: .large)
-            .toolbar{
+            /*.toolbar{
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
                     
                     Button(action: {}) {
@@ -43,15 +43,15 @@ struct DashboardView : View {
                         
                     }
                 }
-            }
+            }*/
             
         }
         
     }
 }
 
-struct DashboardView_Previews: PreviewProvider {
+struct CoinView_Previews: PreviewProvider {
     static var previews: some View{
-        DashboardView()
+        CoinView()
     }
 }

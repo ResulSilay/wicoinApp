@@ -10,9 +10,9 @@ import Kingfisher
 
 struct ConversionCoinItem : View {
     
-    @State var coinItem : CoinDataModel? = nil
+    var coinItem : CoinDataModel? = nil
     
-    @State var selectedItemId : Int? = 0
+    var selectedCoinItem : CoinDataModel? = nil
     
     var body: some View {
         
@@ -24,11 +24,11 @@ struct ConversionCoinItem : View {
                     .resizable()
                     .cancelOnDisappear(true)
                     .aspectRatio(contentMode: .fill)
-                    .frame(width: 25, height: 25)
+                    .frame(width: isSelected() ? 35 : 25, height: isSelected() ? 35 : 25)
                     .clipShape(Circle())
                 
                 Text(coinItem!.symbol!)
-                    .foregroundColor(Color.secondary)
+                    .foregroundColor(isSelected() ? Color.orange : Color.primary)
                     .fontWeight(.bold)
                     .lineLimit(1)
                     .frame(minWidth:50)
@@ -38,12 +38,12 @@ struct ConversionCoinItem : View {
                     .foregroundColor(coinItem!.quote!.usd!.percentChange1H! > 0 ? Color.green : Color.red)
                     .fontWeight(.bold)
                     .lineLimit(1)
-                    .font(.system(size: 14))
+                    .font(.system(size: 9))
                     .padding(.top, 0.2)
                 
             }
-            .padding(.top,30)
-            .padding(.bottom,30)
+            .padding(.top, isSelected() ? 35 : 25)
+            .padding(.bottom, isSelected() ? 35 : 25)
             .padding(.leading,10)
             .padding(.trailing,10)
             
@@ -51,17 +51,26 @@ struct ConversionCoinItem : View {
         .overlay(RoundedRectangle(cornerRadius: 48)
                     .stroke(getSelectBackground(), lineWidth: 2))
         .shadow(radius: 0)
-        .padding(.top,10)
-        .padding(.bottom,10)
+        .padding(.top, 25)
+        .padding(.bottom, 25)
         .padding(.trailing, 3)
         .padding(.leading, 15)
     }
     
+    func isSelected() -> Bool {
+        
+        print("thisId: \(String(describing: self.coinItem?.id?.toString()))   -----    selectId: \(String(describing: self.selectedCoinItem?.id))")
+        
+        if self.coinItem?.id == self.selectedCoinItem?.id {
+            return true
+        }
+        
+        return false
+    }
+    
     func getSelectBackground() -> Color {
         
-        print("thisId: \(String(describing: self.coinItem?.id?.toString()))   -----    selectId: \(String(describing: self.selectedItemId))")
-        
-        if self.coinItem?.id == self.selectedItemId {
+        if isSelected() {
             return Color.orange
         }
         

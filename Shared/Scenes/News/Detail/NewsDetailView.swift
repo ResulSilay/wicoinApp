@@ -58,7 +58,7 @@ struct NewsDetailView : View {
                         
                         FlowLayoutView(mode: .scrollable,
                                        binding: .constant(5),
-                                       items: (self.newsArchive?.keywords)!) {
+                                       items: (self.newsArchive?.keywords) ?? []) {
                             Text($0)
                                 .font(.system(size: 12))
                                 .foregroundColor(Color.primary)

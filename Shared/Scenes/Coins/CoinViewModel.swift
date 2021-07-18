@@ -7,9 +7,9 @@
 
 import Foundation
 
-class DashboardViewModel : ObservableObject {
+class CoinViewModel : ObservableObject {
     
-    private let crytoService = CryptoServiceImpl()
+    @Inject private var crytoService : CryptoService
     
     @Published var coins = [CoinDataModel]()
     

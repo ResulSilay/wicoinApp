@@ -9,11 +9,11 @@ import Foundation
 
 class ConversionViewModel: ObservableObject {
     
-    private var conversionService = ConversionServiceImpl()
+    @Inject private var conversionService : ConversionService
     
-    private let cryptoService = CryptoServiceImpl()
+    @Inject private var cryptoService : CryptoService
     
-    @Published var conversionResult : ConversionResultResponse? = nil
+    @Published var conversionResult : ConversionDataModel? = nil
     
     @Published var coins = [CoinDataModel]()
     
@@ -24,7 +24,7 @@ class ConversionViewModel: ObservableObject {
         DispatchQueue.main.async {
             
             self.conversionService.convert(request: conversionRequest) { ConversionResultResponse in
-                self.conversionResult = ConversionResultResponse
+                self.conversionResult = ConversionResultResponse.data
                 
             } failure: {
                 
@@ -43,8 +43,6 @@ class ConversionViewModel: ObservableObject {
             
             self.cryptoService.getLatestAllCoin(success: { CoinLatestResponse in
                 self.coins = CoinLatestResponse.data!
-                print("get coints ------------> ok")
-                print(self.coins.count.toString())
                 
             }, failure: {
                 
