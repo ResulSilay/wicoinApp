@@ -12,7 +12,7 @@ struct MainView: View {
     var body: some View {
         
         TabView{
-        
+            
             CoinView()
                 .tabItem {
                     Image(systemName: "bitcoinsign.circle")

@@ -9,11 +9,12 @@ import Foundation
 
 class ConversionRequest {
     var id : Int?
+    var convertId: Int?
     var amount : Double?
     
-    
-    init(id: Int?, amount:Double?) {
+    init(id: Int?, convertId: Int?, amount:Double?) {
         self.id = id
+        self.convertId = convertId
         self.amount = amount
     }
 }

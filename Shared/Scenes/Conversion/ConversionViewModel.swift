@@ -43,8 +43,6 @@ class ConversionViewModel: ObservableObject {
             
             self.cryptoService.getLatestAllCoin(success: { CoinLatestResponse in
                 self.coins = CoinLatestResponse.data!
-                print("get coints ------------> ok")
-                print(self.coins.count.toString())
                 
             }, failure: {
                 
