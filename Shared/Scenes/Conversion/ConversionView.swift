@@ -56,9 +56,9 @@ struct ConversionView :View {
                     }
                     
                 }
-                .padding(.top,15)
+                .padding(.top, 15)
                 
-                Spacer(minLength: 40)
+                Spacer(minLength: 10)
                 
                 TextField("Enter Amount", text: self.$amount)
                     .foregroundColor(Color.primary)
@@ -68,7 +68,7 @@ struct ConversionView :View {
                         RoundedRectangle(cornerRadius: 36.0)
                             .stroke(Color.secondary, lineWidth: 2.0)
                     )
-                    .multilineTextAlignment(.trailing)
+                    .multilineTextAlignment(.center)
                     .padding()
                 
                 Button(action: {
@@ -108,13 +108,14 @@ struct ConversionView :View {
                                         .resizable()
                                         .cancelOnDisappear(true)
                                         .aspectRatio(contentMode: .fill)
-                                        .frame(width: 35, height: 35)
+                                        .frame(width: 30, height: 30)
                                         .clipShape(Circle())
                                     
                                 }
                                 
                                 if self.coinSourceItem != nil {
                                     Image(systemName: "arrow.right")
+                                        .foregroundColor(Color.black)
                                 }
                                 
                                 if self.coinTargetItem != nil {
@@ -122,25 +123,28 @@ struct ConversionView :View {
                                         .resizable()
                                         .cancelOnDisappear(true)
                                         .aspectRatio(contentMode: .fill)
-                                        .frame(width: 35, height: 35)
+                                        .frame(width: 30, height: 30)
                                         .clipShape(Circle())
                                     
                                 }
                             }
-                            .padding(.bottom, 20)
+                            .padding(.top, 10)
                             
-                            Text(viewModel.conversionResult?.quote?.coinArray[0].price?.toString() ?? "-")
+                            Text(viewModel.conversionResult?.quote?.coinArray[0].price?.toFormatter() ?? "-")
                                 .fontWeight(.bold)
-                                .font(.system(size: 25))
+                                .font(.system(size: 21))
+                                .foregroundColor(Color.black)
                                 .redacted(reason: viewModel.conversionResult == nil ? .placeholder : [])
+                                .padding(.bottom, 10)
+                                .padding(.top, 5)
                         }
                     }
-                    .frame(maxWidth: .infinity, minHeight: 150)
+                    .frame(maxWidth: .infinity, minHeight: 100)
                     .background(LinearGradient(gradient: Gradient(colors: [.red, .orange, .orange]), startPoint: .leading, endPoint: .trailing))
-                    .cornerRadius(16)
+                    .cornerRadius(12)
                     .shadow(radius: 6)
                     .padding()
-                    .padding(.top, 20)
+                    .padding(.top, 5)
                 }
             }
             

@@ -22,11 +22,11 @@ struct SplashView: View {
                 
                 Color("SplashBg")
                 
-                Image("SplashLogo")
+                Image("Logo")
                     .resizable()
                     .renderingMode(.original)
                     .aspectRatio(contentMode: animate ? .fill : .fit)
-                    .frame(width: animate ? nil : 150, height: animate ? nil : 150)
+                    .frame(width: animate ? nil : 100, height: animate ? nil : 100)
                     .scaleEffect(animate ? 3 : 1 )
                     .frame(width: UIScreen.main.bounds.width)
                 

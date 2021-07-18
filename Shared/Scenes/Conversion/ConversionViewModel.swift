@@ -9,9 +9,9 @@ import Foundation
 
 class ConversionViewModel: ObservableObject {
     
-    private var conversionService = ConversionServiceImpl()
+    @Inject private var conversionService : ConversionService
     
-    private let cryptoService = CryptoServiceImpl()
+    @Inject private var cryptoService : CryptoService
     
     @Published var conversionResult : ConversionDataModel? = nil
     

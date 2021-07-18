@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		632F545226A2B99F003F19C7 /* ApiConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632F545126A2B99F003F19C7 /* ApiConst.swift */; };
 		632F545426A2BD8C003F19C7 /* NewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632F545326A2BD8C003F19C7 /* NewsService.swift */; };
-		632F545626A2BE06003F19C7 /* NewsArchiveImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632F545526A2BE06003F19C7 /* NewsArchiveImpl.swift */; };
+		632F545626A2BE06003F19C7 /* NewsServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632F545526A2BE06003F19C7 /* NewsServiceImpl.swift */; };
 		632F545826A2BF5A003F19C7 /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632F545726A2BF5A003F19C7 /* NewsViewModel.swift */; };
 		632F545A26A2C028003F19C7 /* NewsArchiveResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632F545926A2C028003F19C7 /* NewsArchiveResponse.swift */; };
 		632F545D26A2C357003F19C7 /* NewsArchiveItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632F545C26A2C357003F19C7 /* NewsArchiveItem.swift */; };
@@ -31,6 +31,10 @@
 		6379486626A206C500A50D83 /* CryptoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6379486526A206C500A50D83 /* CryptoService.swift */; };
 		6379486926A20B7F00A50D83 /* ConversionCoinItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6379486826A20B7F00A50D83 /* ConversionCoinItem.swift */; };
 		6379486B26A21D9700A50D83 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6379486A26A21D9700A50D83 /* Styles.swift */; };
+		6382D69D26A49C8300AE4158 /* DependencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6382D69C26A49C8300AE4158 /* DependencyManager.swift */; };
+		6382D6A026A49D5A00AE4158 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 6382D69F26A49D5A00AE4158 /* Swinject */; };
+		6382D6A226A49D7800AE4158 /* Resolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6382D6A126A49D7800AE4158 /* Resolver.swift */; };
+		6382D6A426A49D9900AE4158 /* ApiContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6382D6A326A49D9900AE4158 /* ApiContainer.swift */; };
 		639B94E826A0C0E8000F68D3 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639B94E726A0C0E8000F68D3 /* Tests_iOS.swift */; };
 		639B94F326A0C0E8000F68D3 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639B94F226A0C0E8000F68D3 /* Tests_macOS.swift */; };
 		639B94F526A0C0E8000F68D3 /* wicoinApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639B94CC26A0C0E6000F68D3 /* wicoinApp.swift */; };
@@ -68,7 +72,7 @@
 /* Begin PBXFileReference section */
 		632F545126A2B99F003F19C7 /* ApiConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConst.swift; sourceTree = "<group>"; };
 		632F545326A2BD8C003F19C7 /* NewsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsService.swift; sourceTree = "<group>"; };
-		632F545526A2BE06003F19C7 /* NewsArchiveImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsArchiveImpl.swift; sourceTree = "<group>"; };
+		632F545526A2BE06003F19C7 /* NewsServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsServiceImpl.swift; sourceTree = "<group>"; };
 		632F545726A2BF5A003F19C7 /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
 		632F545926A2C028003F19C7 /* NewsArchiveResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsArchiveResponse.swift; sourceTree = "<group>"; };
 		632F545C26A2C357003F19C7 /* NewsArchiveItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsArchiveItem.swift; sourceTree = "<group>"; };
@@ -90,6 +94,9 @@
 		6379486526A206C500A50D83 /* CryptoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoService.swift; sourceTree = "<group>"; };
 		6379486826A20B7F00A50D83 /* ConversionCoinItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionCoinItem.swift; sourceTree = "<group>"; };
 		6379486A26A21D9700A50D83 /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
+		6382D69C26A49C8300AE4158 /* DependencyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyManager.swift; sourceTree = "<group>"; };
+		6382D6A126A49D7800AE4158 /* Resolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resolver.swift; sourceTree = "<group>"; };
+		6382D6A326A49D9900AE4158 /* ApiContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiContainer.swift; sourceTree = "<group>"; };
 		639B94CC26A0C0E6000F68D3 /* wicoinApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wicoinApp.swift; sourceTree = "<group>"; };
 		639B94CD26A0C0E6000F68D3 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		639B94CE26A0C0E8000F68D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -119,6 +126,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				639B952626A0E0B7000F68D3 /* Kingfisher in Frameworks */,
+				6382D6A026A49D5A00AE4158 /* Swinject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,7 +238,7 @@
 			children = (
 				639B951226A0C6FE000F68D3 /* CryptoServiceImpl.swift */,
 				6379485A26A202F100A50D83 /* ConversionServiceImpl.swift */,
-				632F545526A2BE06003F19C7 /* NewsArchiveImpl.swift */,
+				632F545526A2BE06003F19C7 /* NewsServiceImpl.swift */,
 			);
 			path = Impl;
 			sourceTree = "<group>";
@@ -251,6 +259,24 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		6382D69B26A49C1B00AE4158 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				6382D6A526A49E7700AE4158 /* Container */,
+				6382D69C26A49C8300AE4158 /* DependencyManager.swift */,
+				6382D6A126A49D7800AE4158 /* Resolver.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		6382D6A526A49E7700AE4158 /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				6382D6A326A49D9900AE4158 /* ApiContainer.swift */,
+			);
+			path = Container;
+			sourceTree = "<group>";
+		};
 		639B94C626A0C0E6000F68D3 = {
 			isa = PBXGroup;
 			children = (
@@ -267,6 +293,7 @@
 			isa = PBXGroup;
 			children = (
 				639B950926A0C145000F68D3 /* Data */,
+				6382D69B26A49C1B00AE4158 /* DI */,
 				639B951426A0CF01000F68D3 /* Scenes */,
 				639B951A26A0D98F000F68D3 /* Util */,
 				639B94CC26A0C0E6000F68D3 /* wicoinApp.swift */,
@@ -423,6 +450,7 @@
 			name = "wicoin (iOS)";
 			packageProductDependencies = (
 				639B952526A0E0B7000F68D3 /* Kingfisher */,
+				6382D69F26A49D5A00AE4158 /* Swinject */,
 			);
 			productName = "wicoin (iOS)";
 			productReference = 639B94D326A0C0E8000F68D3 /* wicoin.app */;
@@ -518,6 +546,7 @@
 			mainGroup = 639B94C626A0C0E6000F68D3;
 			packageReferences = (
 				639B952426A0E0B7000F68D3 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				6382D69E26A49D5A00AE4158 /* XCRemoteSwiftPackageReference "Swinject" */,
 			);
 			productRefGroup = 639B94D426A0C0E8000F68D3 /* Products */;
 			projectDirPath = "";
@@ -574,6 +603,8 @@
 				639B951326A0C6FE000F68D3 /* CryptoServiceImpl.swift in Sources */,
 				6379484E26A16C7600A50D83 /* CoinDetailViewModel.swift in Sources */,
 				6379486226A2039A00A50D83 /* ConversionRequest.swift in Sources */,
+				6382D6A226A49D7800AE4158 /* Resolver.swift in Sources */,
+				6382D6A426A49D9900AE4158 /* ApiContainer.swift in Sources */,
 				6379485926A2029600A50D83 /* ConversionViewModel.swift in Sources */,
 				632F545D26A2C357003F19C7 /* NewsArchiveItem.swift in Sources */,
 				632F545A26A2C028003F19C7 /* NewsArchiveResponse.swift in Sources */,
@@ -583,6 +614,7 @@
 				6379486626A206C500A50D83 /* CryptoService.swift in Sources */,
 				6379486926A20B7F00A50D83 /* ConversionCoinItem.swift in Sources */,
 				6379485026A16D9300A50D83 /* CoinInfoResponse.swift in Sources */,
+				6382D69D26A49C8300AE4158 /* DependencyManager.swift in Sources */,
 				6379486B26A21D9700A50D83 /* Styles.swift in Sources */,
 				639B94F726A0C0E8000F68D3 /* MainView.swift in Sources */,
 				6379485326A1A47900A50D83 /* NewsView.swift in Sources */,
@@ -593,7 +625,7 @@
 				632F545226A2B99F003F19C7 /* ApiConst.swift in Sources */,
 				632F546926A3125F003F19C7 /* CoinMock.swift in Sources */,
 				63E6AB2126A3A1FA000533AC /* SplashView.swift in Sources */,
-				632F545626A2BE06003F19C7 /* NewsArchiveImpl.swift in Sources */,
+				632F545626A2BE06003F19C7 /* NewsServiceImpl.swift in Sources */,
 				6379484C26A16C2800A50D83 /* CoinDetailView.swift in Sources */,
 				6379485626A2019D00A50D83 /* ConversionView.swift in Sources */,
 				632F545826A2BF5A003F19C7 /* NewsViewModel.swift in Sources */,
@@ -979,6 +1011,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		6382D69E26A49D5A00AE4158 /* XCRemoteSwiftPackageReference "Swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/Swinject.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.7.1;
+			};
+		};
 		639B952426A0E0B7000F68D3 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
@@ -990,6 +1030,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		6382D69F26A49D5A00AE4158 /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6382D69E26A49D5A00AE4158 /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
+		};
 		639B952526A0E0B7000F68D3 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 639B952426A0E0B7000F68D3 /* XCRemoteSwiftPackageReference "Kingfisher" */;

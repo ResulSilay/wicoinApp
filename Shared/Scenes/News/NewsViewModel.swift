@@ -10,7 +10,7 @@ import Foundation
 
 class NewsViewModel: ObservableObject {
     
-    private var newsService = NewsServiceImpl()
+    @Inject private var newsService : NewsService
     
     @Published var newsArchives = [NewsArchiveModel]()
     

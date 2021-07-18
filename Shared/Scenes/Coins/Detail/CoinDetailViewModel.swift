@@ -9,11 +9,11 @@ import Foundation
 
 class CoinDetailViewModel: ObservableObject {
     
+    @Inject private var cryptoService : CryptoService
+    
     @Published var data : CoinInfoModel? = nil
     
     @Published var isLoading: Bool = false
-    
-    private var cryptoService = CryptoServiceImpl()
     
     func getInfo(id: Int){
         

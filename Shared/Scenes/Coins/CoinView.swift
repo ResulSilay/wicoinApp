@@ -32,7 +32,7 @@ struct CoinView : View {
             )
             
             .navigationBarTitle("Coins", displayMode: .large)
-            .toolbar{
+            /*.toolbar{
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
                     
                     Button(action: {}) {
@@ -43,7 +43,7 @@ struct CoinView : View {
                         
                     }
                 }
-            }
+            }*/
             
         }
         

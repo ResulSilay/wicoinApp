@@ -42,8 +42,8 @@ struct ConversionCoinItem : View {
                     .padding(.top, 0.2)
                 
             }
-            .padding(.top, isSelected() ? 45 : 30)
-            .padding(.bottom, isSelected() ? 45 : 30)
+            .padding(.top, isSelected() ? 35 : 25)
+            .padding(.bottom, isSelected() ? 35 : 25)
             .padding(.leading,10)
             .padding(.trailing,10)
             

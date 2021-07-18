@@ -18,7 +18,7 @@ struct NewsArchiveItem : View {
             
             HStack{
                 
-                KFImage(URL(string: archiveItem!.imageURL?.toString() ?? ""))
+                KFImage(URL(string: archiveItem!.imageURL?.toString() ?? "https://www.justetf.com/images/thumbnails/etf-investment-guide-theme-crypto.jpg"))
                     .resizable()
                     .cancelOnDisappear(true)
                     .aspectRatio(contentMode: .fill)
@@ -66,7 +66,7 @@ struct NewsArchiveItem : View {
 
 struct NewsArchiveItem_Previews : PreviewProvider {
     static var previews: some View{
-        NewsArchiveItem(archiveItem: NewsArchiveModel(title: "Cardano is outstripping ....", link: "https://", keywords: ["",""], creator: ["Bitcoin.com"], videoURL: "https://", description: "Cardona.........", content: "content", pubDate: "01.01.2020 20:20", imageURL: "https://", sourceID: "23492-dfjsd-98723-sdf888"))
+        NewsArchiveItem(archiveItem: NewsMock().mock())
             .previewLayout(.sizeThatFits)
     }
 }
